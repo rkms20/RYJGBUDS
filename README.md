@@ -1,2 +1,2 @@
-#RYJGPGBUDS
-#Made for convience
+# RYJGBUDS
+#MADE FOR CONVENINCE
