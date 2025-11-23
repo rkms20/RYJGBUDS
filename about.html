@@ -1,62 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Page</title>
-    <style>
-        /* Background color */
-        body {
-            background-color: lightblue; /* You can change this to any color you like */
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-        /* Button styling */
-        button {
-            background-color: #04AA6D; /* green */
-            color: white;
-            padding: 15px 32px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+/* Background color */
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    margin: 0;
+}
 
-        button:hover {
-            background-color: #028a5e; /* slightly darker on hover */
-        }
+button {
+    background-color: #04AA6D;
+    color: rgb(255, 213, 203);
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        h1 {
-            color: #333;
-        }
+button:hover { background-color: #028a5e; }
 
-        p {
-            color: #222;
-        }
-    </style>
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
 </head>
 <body>
-    <h1>About</h1>
-    <button type="button" onclick="window.location.href='main.html'">Home</button>
 
-    <p>Resently we made a website called jacksongreen.online. It was good but we wanted more.
-        we built this website simular to jacksongreen.online but it is newer and improved. For instance, 
-        we adding a google helper to this webstite and many more organization to make students better organized
-        speak to your teachers about this website and if you can use it. Hope you enjoy!
-    </p>
-</br/>
+<h1>About</h1>
+<h3>Hover over the image below:</h3>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Ryan Yip</h1> 
+      <p>Github Management & Framework Management.</p> 
+   
+    </div>
+  </div>
+</div>
 </br>
-    <h1>Credits</h1>
-    <footer><fieldset>
-    
-    Ryan Yip - Github management & Frame work managnment
-    Jackson Green - HTML management & Javascript Managenment
-    Pranavej Grandhe - Design managnment & CSS managnment
-    
-    </fieldset></footer>
-
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="JacksonGreen.jpeg" alt="Avatar" style="width:230px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Jackson Green</h1> 
+      <p>HTML Management & Javascript Management.</p> 
+     
+    </div>
+  </div>
+</div>
+</br>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Pranav Grandhe</h1> 
+      <p>CSS Management & Design Management.</p> 
+    </br>
+    </div>
+  </div>
+</div>
+</br>
+<br/>
+    <button type="button" onclick="window.location.href='main.html'">Home</button>
+<br><br>
 </body>
 </html>
