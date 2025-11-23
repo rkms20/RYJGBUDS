@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
+    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RYJGPGBUDS</title>
@@ -10,18 +11,44 @@ body {
     background-color: lightblue;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding-top: 50px;
     margin: 0;
+    padding-top: 90px; /* space for toolbar */
     transition: opacity 0.5s;
     opacity: 1;
 }
 
 body.fade-out {
-    opacity: 0; /* triggers fade-out */
+    opacity: 0;
 }
 
 h1 { color: #333; }
 p { color: #222; }
+
+/* ===== Toolbar ===== */
+.toolbar {
+    background-color: #028a5e;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.toolbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.toolbar a:hover {
+    background-color: #04AA6D;
+}
 
 /* ===== Buttons ===== */
 button {
@@ -42,7 +69,7 @@ button:hover { background-color: #028a5e; }
     width: 200px;
     height: 200px;
     margin: 50px auto;
-    perspective: 800px; /* 3D perspective */
+    perspective: 800px;
 }
 
 /* ===== Cube ===== */
@@ -51,7 +78,7 @@ button:hover { background-color: #028a5e; }
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    animation: spin 5s linear infinite; /* continuous spin */
+    animation: spin 5s linear infinite;
 }
 
 .face {
@@ -89,8 +116,16 @@ footer fieldset {
 </head>
 <body>
 
+<!-- ===== Toolbar ===== -->
+<div class="toolbar">
+    <a href="index.html" onclick="navigateWithFade('index.html')">Home</a>
+    <a href="Help.html" onclick="navigateWithFade('Help.html')">Help</a>
+    <a href="about.html" onclick="navigateWithFade('about.html')">About</a>
+    <a href="timeline.html" onclick="navigateWithFade('timeline.html')">Updates</a>
+</div>
+
 <h1>RYJGbuds</h1>
-<p>Made for shoping.</p>
+<p>Made for shopping.</p>
 
 <!-- ===== Buttons ===== -->
 <button type="button" onclick="navigateWithFade('Help.html')">Go to help page</button>
@@ -123,19 +158,16 @@ footer fieldset {
     </fieldset>
 </footer>
 
-<br><br><br><br>
-
-<br><br>
-<!--fdsajkdsfdslkfjsldkfjdsl-->>
 <!-- ===== Fade-out navigation script ===== -->
 <script>
 function navigateWithFade(url) {
-    document.body.classList.add('fade-out'); // trigger fade out
+    document.body.classList.add('fade-out');
     setTimeout(() => {
-        window.location.href = url; // navigate after animation
-    }, 500); // 0.5s matches CSS transition
+        window.location.href = url;
+    }, 500);
 }
 </script>
 
 </body>
 </html>
+
